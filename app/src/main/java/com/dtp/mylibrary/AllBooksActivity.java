@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -31,13 +32,17 @@ public class AllBooksActivity extends AppCompatActivity {
         adapter = new BookRecViewAdapter(this);
 
         booksRecView.setAdapter(adapter);
-        booksRecView.setLayoutManager(new GridLayoutManager(this, 2));
+        booksRecView.setLayoutManager(new LinearLayoutManager(this));
 
         ArrayList<Book> books = new ArrayList<>();
-        Book book = new Book(1, "1Q84", "Haruki Murakami", 1350,
+
+        books.add(new Book(1, "1Q84", "Haruki Murakami", 1350,
                 "https://down-vn.img.susercontent.com/file/0b02dcef336a82a2107d15b24bc4dd00",
-                "A work of maddening brilliance", "Long description");
-        books.add(book);
+                "A work of maddening brilliance", "Long description"));
+
+        books.add(new Book(2, "The Mys of Sisyphus", "Albert Camus", 1350,
+                "https://www.davelabowitz.com/wp-content/uploads/Sisyphus-e1557869810488.jpg",
+                "A work of maddening brilliance", "Long description"));
 
         adapter.setBooks(books);
     }
