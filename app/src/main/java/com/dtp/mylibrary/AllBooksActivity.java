@@ -34,16 +34,6 @@ public class AllBooksActivity extends AppCompatActivity {
         booksRecView.setAdapter(adapter);
         booksRecView.setLayoutManager(new LinearLayoutManager(this));
 
-        ArrayList<Book> books = new ArrayList<>();
-
-        books.add(new Book(1, "1Q84", "Haruki Murakami", 1350,
-                "https://down-vn.img.susercontent.com/file/0b02dcef336a82a2107d15b24bc4dd00",
-                "A work of maddening brilliance", "Long description"));
-
-        books.add(new Book(2, "The Mys of Sisyphus", "Albert Camus", 1350,
-                "https://www.davelabowitz.com/wp-content/uploads/Sisyphus-e1557869810488.jpg",
-                "A work of maddening brilliance", "Long description"));
-
-        adapter.setBooks(books);
+        adapter.setBooks(Utils.getInstance().getAllBooks());
     }
 }
